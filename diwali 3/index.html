@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali Celebration</title>
+  <style>
+    /* Basic styles */
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .happy-diwali {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00, 0 0 30px #ff6600;
+      animation: glow 2s ease-in-out infinite;
+      position: absolute;
+      top: 10%;
+      width: 100%;
+    }
+
+    /* Animation for text glow */
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00, 0 0 30px #ff6600;
+      }
+      50% {
+        text-shadow: 0 0 20px #ffcc00, 0 0 40px #ff6600, 0 0 60px #ff3300;
+      }
+    }
+
+    /* Crackers (fireworks) container */
+    .firework-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: explode 1s ease-out forwards;
+    }
+
+    /* Sky-shot cracker styles */
+    .sky-shot {
+      position: absolute;
+      bottom: 0;
+      width: 3px;
+      height: 20px;
+      background-color: #ff6600;
+      animation: shoot-up 1s ease-in forwards, explode 1s 1s ease-out forwards;
+    }
+
+    /* Firework explosion animation */
+    @keyframes explode {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
+
+    /* Sky-shot launch animation */
+    @keyframes shoot-up {
+      0% {
+        bottom: 0;
+        opacity: 1;
+      }
+      100% {
+        bottom: 80%;
+        opacity: 0;
+      }
+    }
+
+    /* Lamp styles */
+    .lamp-container {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    .lamp {
+      width: 60px;
+      height: 120px;
+      background: #660000;
+      border-radius: 0 0 50% 50%;
+      position: relative;
+      overflow: hidden;
+      animation: flicker 2s infinite;
+    }
+
+    .lamp::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 30px;
+      background-color: #ff6600;
+      border-radius: 50%;
+      box-shadow: 0 0 15px 5px #ffcc00;
+      opacity: 0;
+      animation: lampLight 1s infinite;
+    }
+
+    /* Lamp light animation */
+    @keyframes lampLight {
+      0%, 100% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    /* Flicker effect */
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+  <div class="happy-diwali">Happy Diwali!</div>
+  <div class="firework-container" id="fireworks"></div>
+  <div class="lamp-container">
+    <div class="lamp"></div>
+    <div class="lamp"></div>
+    <div class="lamp"></div>
+  </div>
+
+  <script>
+    // Firework generation on drag
+    document.addEventListener('mousemove', (e) => {
+      createFirework(e.pageX, e.pageY);
+    });
+
+    function createFirework(x, y) {
+      const firework = document.createElement('div');
+      firework.classList.add('firework');
+      firework.style.left = `${x}px`;
+      firework.style.top = `${y}px`;
+      
+      const container = document.getElementById('fireworks');
+      container.appendChild(firework);
+
+      // Remove firework element after animation ends
+      firework.addEventListener('animationend', () => {
+        firework.remove();
+      });
+    }
+
+    // Function to launch sky-shot crackers randomly
+    function launchSkyShot() {
+      const skyShot = document.createElement('div');
+      skyShot.classList.add('sky-shot');
+
+      // Randomize the horizontal position of the sky-shot
+      skyShot.style.left = `${Math.random() * 100}vw`;
+
+      const container = document.getElementById('fireworks');
+      container.appendChild(skyShot);
+
+      // Remove sky-shot element after animation ends
+      skyShot.addEventListener('animationend', () => {
+        skyShot.remove();
+      });
+    }
+
+    // Launch sky-shot crackers every 1.5 seconds
+    setInterval(launchSkyShot, 50);
+  </script>
+</body>
+</html>
