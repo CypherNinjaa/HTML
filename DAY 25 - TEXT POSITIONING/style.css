@@ -1,0 +1,15 @@
+/* div{
+    text-align: right;
+    background-color: yellow;
+}
+
+span{
+    text-align: right;
+    background-color: green;
+} */
+p {
+  /* line-height: 10px; */
+  /* letter-spacing: 5px; */
+  text-align: justify;
+  font-size: 20px;
+}
