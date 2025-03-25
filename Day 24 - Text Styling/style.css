@@ -1,0 +1,18 @@
+h1{
+    font-weight: 400;
+}
+h2{
+    text-decoration: line-through dotted red;
+}
+h3{
+    text-decoration: overline;
+}
+h4{
+    text-decoration: underline;
+}
+h5{
+    text-decoration: none;
+}
+h6{
+    text-transform: uppercase;
+}
