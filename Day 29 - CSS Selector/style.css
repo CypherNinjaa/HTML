@@ -5,6 +5,7 @@ h1 {
 h1,
 .para-font {
   font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 
 .red-text{
@@ -12,4 +13,7 @@ h1,
 }
 .green-text{
     color: green;
+}
+div{
+   text-align: center;
 }
