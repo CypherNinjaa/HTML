@@ -1,0 +1,19 @@
+h1 {
+  font-size: 48px;
+}
+
+h1,
+.para-font {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.red-text{
+    color: red;
+}
+.green-text{
+    color: green;
+}
+div{
+   text-align: center;
+}
