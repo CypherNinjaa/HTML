@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form id="telegramForm">
+        <label>Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label>Message:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        document.getElementById("telegramForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let formData = new FormData(this);
+
+            fetch("http://127.0.0.1:5000/sendMessage", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Show response from the Python backend
+            })
+            .catch(error => {
+                alert("Error sending message.");
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>
