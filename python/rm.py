@@ -1,7 +1,7 @@
 import os
 
 # Directory where the files are located
-directory = r'C:\Users\vikas\Downloads\Telegram Desktop'  # Change this to your actual folder
+directory = r'C:\Users\Vikash\Downloads\Telegram Desktop'  # Change this to your actual folder
 
 # Text to replace or add
 text_to_find = "@providerhub0"

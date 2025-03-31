@@ -8,3 +8,11 @@ button:hover{
 button:shadow{
 color: aqua;
 }
+button:active{
+    background-color: yellow;
+}
+
+
+li:nth-child(2n+1){
+    background-color: green;
+}
