@@ -1,0 +1,27 @@
+/* #para{
+    color: rgb(30, 0, 255);
+} */
+
+body{
+    color: green;
+    
+}
+
+.para{
+    color: aqua;
+}
+
+p{
+    color: red;
+}
+p{
+    color: green;
+}
+
+span{
+    background-color: brown;
+}
+div
+{
+    text-align: center;
+}

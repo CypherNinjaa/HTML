@@ -1,0 +1,24 @@
+p::first-letter {
+  color: red;
+  font-size: 40px;
+}
+
+body,html {
+  scrollbar-color: blue white;
+  scrollbar-width: thin;
+}
+h1::after{
+    content: '';
+    height: 10px;
+    width: 10px;
+    background-color: brown;
+    display: inline-block;
+}
+h1{
+    position: relative;
+    background: #eee;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 8px;
+}

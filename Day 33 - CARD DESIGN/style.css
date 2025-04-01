@@ -1,0 +1,11 @@
+body{
+    font-family: Roboto;
+    background-color: #fa8476;
+}
+
+.card{
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    padding: 10px;
+}

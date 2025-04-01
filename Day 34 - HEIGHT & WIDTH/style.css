@@ -1,0 +1,18 @@
+h1{
+    background-color: aqua;
+}
+
+p{
+    background-color: yellow;
+    width: 300px;
+    /* height: 120px; */
+}
+
+span{
+    height: 500px;
+    width: 200px;
+    background-color: blue;
+}
+img{
+    width: 300px;
+}
