@@ -1,0 +1,25 @@
+div{
+    color: black;
+    padding: 10px;
+    /* border-width: 10px;
+    border-style: solid;
+    border-color: red; */
+    /* short hand */
+    border: 10px double red;
+    border-top: dashed red 10px;
+}
+
+.btn{
+    padding: 7px 10px;
+}
+
+.login{
+    background-color: 3px #669bbc;
+    color: #003049;
+}
+
+.signup{
+    border: 3px solid #669bbc;
+    background-color:  transparent;
+    color: #003049;
+}
